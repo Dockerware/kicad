@@ -67,7 +67,11 @@ RUN set -xe \
         language-pack-bg \
     " \
     && apt-add-repository --yes ppa:js-reynaud/ppa-kicad \
-	&& apt-get update && apt-get install -y kicad $localeDeps \
+    && apt-get update \
+    && apt-get install -y \
+               kicad \
+	       kicad-library \
+	       $localeDeps \
 
     # Setup enveroument
     && echo "NO_AT_BRIDGE=1" | tee -a /etc/environment \
